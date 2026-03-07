@@ -1,4 +1,6 @@
 ---
+import BrowserStores from './BrowserStores.astro';
+
 const currentPath = Astro.url.pathname;
 const base = currentPath === '/' ? '' : '/';
 ---
@@ -12,9 +14,10 @@ const base = currentPath === '/' ? '' : '/';
           <img src="/favicon.svg" alt="Note Reviewer Logo" class="w-6 h-6 transition-transform" />
           <span class="font-semibold text-white text-sm">Note Reviewer</span>
         </div>
-        <p class="text-sm leading-relaxed">
+        <p class="text-sm leading-relaxed mb-6">
           AI-powered clinical note quality &amp; compliance for ABA professionals. A product by <span class="text-white font-medium">Infinity Code LLC</span>.
         </p>
+        <BrowserStores size="sm" />
       </div>
 
       <div>
@@ -23,11 +26,6 @@ const base = currentPath === '/' ? '' : '/';
           <li><a href={`${base}#features`}     class="hover:text-white transition-colors">Features</a></li>
           <li><a href={`${base}#how-it-works`} class="hover:text-white transition-colors">How it Works</a></li>
           <li><a href="/privacy"               class="hover:text-white transition-colors">Privacy Policy</a></li>
-          <li>
-            <a href="https://chromewebstore.google.com" target="_blank" rel="noopener" class="hover:text-white transition-colors">
-              Chrome Web Store ↗
-            </a>
-          </li>
         </ul>
       </div>
 

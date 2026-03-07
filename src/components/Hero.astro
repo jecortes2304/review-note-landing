@@ -1,4 +1,5 @@
 ---
+import BrowserStores from './BrowserStores.astro';
 ---
 
 <section class="relative overflow-hidden bg-linear-to-br from-brand-700 via-brand-600 to-brand-500 text-white">
@@ -10,7 +11,7 @@
   <div class="relative max-w-6xl mx-auto px-6 py-28 md:py-36 text-center">
     <span class="inline-flex items-center gap-2 bg-white/15 border border-white/25 text-white/90 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
       <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-      Chrome Extension · AI-Powered
+      Browser Extension · AI-Powered
     </span>
 
     <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6 max-w-4xl mx-auto">
@@ -19,34 +20,27 @@
       for ABA Notes
     </h1>
 
-    <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-      Real-time clinical note review in your browser's side panel. Designed for BCBAs who need
+    <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed">
+      Real-time clinical note review right inside your browser's side panel. Designed for BCBAs who need
       instant quality feedback — without ever modifying the original text.
     </p>
 
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a
-        href="https://chromewebstore.google.com"
-        target="_blank"
-        rel="noopener"
-        class="inline-flex items-center justify-center gap-2 bg-white text-brand-700 font-bold text-base px-8 py-4 rounded-xl hover:bg-sky-50 transition-colors shadow-lg"
-      >
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
-        </svg>
-        Get Started — It's Free
-      </a>
+    <div id="install" class="bg-white/10 border border-white/20 rounded-2xl px-8 py-7 max-w-xl mx-auto mb-8 backdrop-blur-sm">
+      <BrowserStores label="Install on your browser" size="md" />
+    </div>
+
+    <div class="flex justify-center gap-6">
       <a
         href="#how-it-works"
-        class="inline-flex items-center justify-center gap-2 border border-white/40 text-white font-semibold text-base px-8 py-4 rounded-xl hover:bg-white/10 transition-colors"
+        class="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-medium transition-colors"
       >
-        See How it Works
+        See how it works
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
         </svg>
       </a>
     </div>
 
-    <p class="mt-10 text-white/50 text-sm">Trusted by ABA professionals · No PHI stored · Works on any EHR</p>
+    <p class="mt-8 text-white/50 text-sm">Trusted by ABA professionals · No PHI stored · Works on any EHR</p>
   </div>
 </section>
