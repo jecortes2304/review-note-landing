@@ -1,46 +1,130 @@
-# Astro Starter Kit: Basics
+# Note Reviewer — Landing Page
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Official marketing website for the **Note Reviewer** Chrome Extension — an AI-powered quality and compliance tool for BCBAs and RBTs working in Applied Behavior Analysis (ABA).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Built with [Astro](https://astro.build) + [Tailwind CSS](https://tailwindcss.com).  
+A product by **Infinity Code LLC** · [info@notereviewer.org](mailto:info@notereviewer.org)
+
+---
 
 ## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 /
 ├── public/
+│   ├── favicon.ico
 │   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   └── Welcome.astro
+│   ├── layouts/
+│   │   └── Layout.astro          # Shared HTML shell (head, fonts, meta)
+│   ├── pages/
+│   │   ├── index.astro           # Landing page (Hero, Features, How it Works, Privacy & Trust, CTA, Footer)
+│   │   └── privacy.astro         # Full Privacy Policy page
+│   └── styles/
+│       └── global.css
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+## 🛠️ Local Development
 
-All commands are run from the root of the project, from a terminal:
+### Prerequisites
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+- [Node.js](https://nodejs.org/) ≥ 18
+- [pnpm](https://pnpm.io/) ≥ 8
 
-## 👀 Want to learn more?
+### Install dependencies
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```sh
+pnpm install
+```
+
+### Start dev server
+
+```sh
+pnpm dev
+```
+
+The site will be available at `http://localhost:4321`.
+
+---
+
+## 📦 Build for Production
+
+```sh
+pnpm build
+```
+
+The optimized static output is generated in the `dist/` folder.
+
+To preview the production build locally:
+
+```sh
+pnpm preview
+```
+
+---
+
+## 🌐 Deployment
+
+This site is a fully static Astro project and can be deployed to any static hosting provider.
+
+### Netlify (recommended)
+
+1. Connect your repository to [Netlify](https://netlify.com).
+2. Set the **Build command** to `pnpm build`.
+3. Set the **Publish directory** to `dist`.
+4. Deploy. Netlify will automatically handle routing for the `/privacy` page.
+
+### Vercel
+
+1. Import the repository on [Vercel](https://vercel.com).
+2. Vercel auto-detects Astro — no extra configuration needed.
+3. Click **Deploy**.
+
+### GitHub Pages
+
+Add an `astro.config.mjs` `base` and `site` option if deploying to a subpath, then push to the `gh-pages` branch or use the official [Astro GitHub Pages GitHub Action](https://docs.astro.build/en/guides/deploy/github/).
+
+---
+
+## 📄 Privacy Policy
+
+The Privacy Policy for the Note Reviewer Chrome Extension is located at:
+
+```
+src/pages/privacy.astro
+```
+
+**Live URL:** `https://your-domain.com/privacy`
+
+This page covers:
+
+- What data is processed (clinical note text for real-time AI analysis).
+- Confirmation that **no PHI is stored** on Infinity Code LLC servers.
+- Data encryption in transit via HTTPS/TLS to the API at `infinitycodellc.com`.
+- Commitment to **never sell or share** user data with third parties for advertising.
+- HIPAA considerations and guidance for clinicians.
+- User rights and contact information.
+
+To update the "Last updated" date, edit the `lastUpdated` variable at the top of `src/pages/privacy.astro`.
+
+---
+
+## 📬 Contact & Support
+
+| Channel   | Details                                              |
+|-----------|------------------------------------------------------|
+| Email     | [info@notereviewer.org](mailto:info@notereviewer.org) |
+| WhatsApp  | [+1 305-307-9212](https://wa.me/13053079212)         |
+| Company   | Infinity Code LLC                                    |
+
+---
+
+## 📝 License
+
+© 2025 Infinity Code LLC. All rights reserved.
