@@ -1,6 +1,6 @@
 # Note Reviewer — Landing Page
 
-Official marketing website for the **Note Reviewer** Chrome Extension — an AI-powered quality and compliance tool for BCBAs and RBTs working in Applied Behavior Analysis (ABA).
+Official marketing website for the **Note Reviewer** Chrome Extension — an AI-powered quality and compliance tool for BCBAs working in Applied Behavior Analysis (ABA).
 
 Built with [Astro](https://astro.build) + [Tailwind CSS](https://tailwindcss.com).  
 A product by **Infinity Code LLC** · [info@notereviewer.org](mailto:info@notereviewer.org)
