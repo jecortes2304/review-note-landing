@@ -1,298 +1,410 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar  from '../components/Navbar.astro';
-import Footer  from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
 const lastUpdated = 'March 7, 2026';
 ---
 
 <Layout
-  title="Privacy Policy – Note Reviewer"
-  description="Learn how Note Reviewer handles your data, protects patient privacy, and complies with HIPAA guidelines for clinical note analysis."
+        title="Privacy Policy – Note Reviewer"
+        description="Learn how Note Reviewer handles your data, protects patient privacy, and complies with HIPAA guidelines for clinical note analysis."
 >
-  <Navbar basePath="/" />
+    <Navbar basePath="/"/>
 
-  <!-- PAGE HERO -->
-  <section class="bg-linear-to-br from-brand-700 via-brand-600 to-brand-500 text-white py-20 md:py-28">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/15 border border-white/25 mb-6">
-        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-        </svg>
-      </div>
-      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Privacy Policy</h1>
-      <p class="text-white/75 text-lg max-w-xl mx-auto">
-        We are committed to protecting the privacy of clinicians and, above all, the patients whose information
-        they document. Read how we handle data with the utmost care.
-      </p>
-      <p class="mt-6 text-white/50 text-sm">Last updated: {lastUpdated} &nbsp;·&nbsp; Infinity Code LLC</p>
-    </div>
-  </section>
-
-  <!-- TRUST BADGES -->
-  <section class="bg-slate-50 border-b border-slate-100 py-8">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="flex flex-wrap justify-center gap-6">
-        {[
-          { label: 'No PHI Stored',        icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', color: 'text-emerald-500' },
-          { label: 'Encrypted in Transit', icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',                                                                                                                                                              color: 'text-brand-700' },
-          { label: 'No Data Selling',       icon: 'M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636',                                                                                                                                                                          color: 'text-rose-500'    },
-          { label: 'HIPAA Conscious',       icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',                                                                                                                                       color: 'text-amber-500'   },
-        ].map(({ label, icon, color }) => (
-          <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-5 py-3 shadow-sm">
-            <svg class={`w-5 h-5 ${color} shrink-0`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d={icon}/>
-            </svg>
-            <span class="text-sm font-semibold text-slate-700">{label}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- POLICY CONTENT -->
-  <main class="py-16 md:py-24 bg-white">
-    <div class="max-w-3xl mx-auto px-6">
-
-      <!-- Intro callout -->
-      <div class="bg-sky-50 border border-sky-200 rounded-2xl px-6 py-5 mb-12 flex gap-4">
-        <svg class="w-6 h-6 text-brand-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
-        <p class="text-sm text-slate-700 leading-relaxed">
-          <strong class="text-slate-900">Plain-language summary:</strong> Note Reviewer reads the clinical note text you provide, sends it to a
-          secure AI API for analysis, returns quality suggestions to you, and then discards the content. We do
-          not store, sell, or share your data or your patients' Protected Health Information (PHI).
-        </p>
-      </div>
-
-
-      <div class="mb-12">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">1</span>
-          <h2 class="text-xl font-extrabold text-slate-900">Who We Are</h2>
-        </div>
-        <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
-          <p>
-            Note Reviewer is a browser extension developed and maintained by <strong class="text-slate-800">Infinity Code LLC</strong>,
-            a technology company dedicated to building productivity tools for healthcare professionals.
-            Our secure API infrastructure is hosted at <a href="https://infinitycodellc.com" target="_blank" rel="noopener" class="text-brand-700 underline underline-offset-2 hover:text-brand-800">infinitycodellc.com</a>.
-          </p>
-          <p>
-            If you have any questions about this Privacy Policy, please contact us at
-            <a href="mailto:info@notereviewer.org" class="text-brand-700 underline underline-offset-2 hover:text-brand-800">info@notereviewer.org</a>.
-          </p>
-        </div>
-      </div>
-
-      <!-- SECTION 2 -->
-      <div class="mb-12">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">2</span>
-          <h2 class="text-xl font-extrabold text-slate-900">What Data We Process</h2>
-        </div>
-        <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
-          <p>
-            When you use Note Reviewer, the extension reads the <strong class="text-slate-800">clinical note text</strong> visible on your active
-            browser tab — only when you explicitly trigger the analysis by activating the side panel. This text
-            may include session descriptions, behavioral observations, and goal progress notes authored by BCBAs.
-          </p>
-          <p>We do <strong class="text-slate-800">not</strong> collect or process:</p>
-          <ul class="list-none space-y-2 mt-2">
-            {[
-              'Patient names, dates of birth, or any other direct identifiers.',
-              'Social Security Numbers, insurance IDs, or financial information.',
-              'Photographs, audio recordings, or biometric data.',
-              'Your browsing history outside of the active note analysis session.',
-            ].map((item) => (
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 text-rose-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+    <!--<section class="bg-linear-to-br from-brand-700 via-brand-600 to-brand-500 text-white py-20 md:py-28">-->
+    <section class="hero-section relative overflow-hidden text-white py-20 md:py-28">
+        <div
+                class="absolute inset-0 opacity-[0.07]"
+                style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 30px 30px;"
+        ></div>
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/15 border border-white/25 mb-6">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="1.8"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                 </svg>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Privacy Policy</h1>
+            <p class="text-white/75 text-lg max-w-xl mx-auto">
+                We are committed to protecting the privacy of clinicians and, above all, the patients whose information
+                they document. Read how we handle data with the utmost care.
+            </p>
+            <p class="mt-6 text-white/50 text-sm">Last updated: {lastUpdated} &nbsp;·&nbsp; Infinity Code LLC</p>
         </div>
-      </div>
+    </section>
 
-      <!-- SECTION 3 -->
-      <div class="mb-12">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">3</span>
-          <h2 class="text-xl font-extrabold text-slate-900">How We Use Your Data</h2>
+    <!-- TRUST BADGES -->
+    <section class="bg-slate-50 border-b border-slate-100 py-8">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-6">
+                {[
+                    {
+                        label: 'No PHI Stored',
+                        icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+                        color: 'text-emerald-500'
+                    },
+                    {
+                        label: 'Encrypted in Transit',
+                        icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+                        color: 'text-brand-700'
+                    },
+                    {
+                        label: 'No Data Selling',
+                        icon: 'M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636',
+                        color: 'text-rose-500'
+                    },
+                    {
+                        label: 'HIPAA Conscious',
+                        icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2',
+                        color: 'text-amber-500'
+                    },
+                ].map(({label, icon, color}) => (
+                        <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-5 py-3 shadow-sm">
+                            <svg class={`w-5 h-5 ${color} shrink-0`} fill="none" stroke="currentColor" stroke-width="2"
+                                 viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d={icon}/>
+                            </svg>
+                            <span class="text-sm font-semibold text-slate-700">{label}</span>
+                        </div>
+                ))}
+            </div>
         </div>
-        <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
-          <p>The note text you submit is used <strong class="text-slate-800">solely</strong> to generate real-time quality and compliance suggestions. The processing pipeline is as follows:</p>
-          <ol class="list-none space-y-3 mt-2">
-            {[
-              'You activate the Note Reviewer side panel and submit a note for review.',
-              'The extension encrypts the text and sends it over HTTPS/TLS to our secure API endpoint at infinitycodellc.com.',
-              'The AI model analyzes the note for clinical quality, objectivity, measurability, and ABA compliance standards.',
-              'Suggestions are returned to your browser and displayed in the side panel.',
-              'The submitted text is immediately discarded from our servers — it is never written to a database or log file.',
-            ].map((step, i) => (
-              <li class="flex items-start gap-3">
-                <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-brand-700 text-white text-xs font-bold shrink-0 mt-0.5">{i + 1}</span>
-                <span>{step}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </div>
+    </section>
 
-      <!-- SECTION 4 -->
-      <div class="mb-12">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">4</span>
-          <h2 class="text-xl font-extrabold text-slate-900">Data Storage &amp; Retention</h2>
-        </div>
-        <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
-          <p><strong class="text-slate-800">We do not store clinical note content on our servers.</strong> After the AI analysis is complete and the response is sent back to your browser, all submitted text is discarded from memory and is not persisted in any database, file system, or log.</p>
-          <p>Your <strong class="text-slate-800">API key</strong> — required to authenticate with the AI provider — is stored exclusively in your browser's local storage using the browser Extension Storage API. It never leaves your device and is never transmitted to our servers.</p>
-          <p>We may retain <strong class="text-slate-800">anonymized, aggregate usage metrics</strong> (e.g., number of analyses performed per day) for the sole purpose of monitoring service reliability. These metrics contain no content from your notes.</p>
-        </div>
-      </div>
+    <!-- POLICY CONTENT -->
+    <main class="py-16 md:py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-6">
 
-      <!-- SECTION 5 -->
-      <div class="mb-12">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">5</span>
-          <h2 class="text-xl font-extrabold text-slate-900">Security Measures</h2>
-        </div>
-        <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
-          <p>We implement industry-standard security controls to protect the data you submit:</p>
-          <ul class="space-y-2 mt-2">
-            {[
-              { icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z', label: 'Encryption in transit:', desc: 'All communication between the extension and our API uses TLS 1.2+ (HTTPS), preventing eavesdropping or interception.' },
-              { icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z',               label: 'Secure infrastructure:', desc: 'Our API is hosted on enterprise-grade cloud infrastructure with restricted access, firewall protection, and regular security audits.' },
-              { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', label: 'Minimal data exposure:', desc: 'By design, we process the smallest amount of data necessary to fulfill the analysis request and discard it immediately after.' },
-            ].map(({ icon, label, desc }) => (
-              <li class="flex items-start gap-3 bg-slate-50 rounded-xl px-4 py-3">
-                <svg class="w-5 h-5 text-brand-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d={icon}/>
+            <!-- Intro callout -->
+            <div class="bg-sky-50 border border-sky-200 rounded-2xl px-6 py-5 mb-12 flex gap-4">
+                <svg class="w-6 h-6 text-brand-700 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
-                <span><strong class="text-slate-800">{label}</strong> {desc}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      <!-- SECTION 6 -->
-      <div class="mb-12">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">6</span>
-          <h2 class="text-xl font-extrabold text-slate-900">Third-Party Sharing</h2>
-        </div>
-        <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
-          <p><strong class="text-slate-800">We do not sell, rent, or share your data with third parties for advertising, marketing, or any commercial purpose.</strong></p>
-          <p>The note text you submit is processed by the AI model provider that you configure via your API key. That provider's own privacy policy and terms of service govern their handling of data. We strongly recommend reviewing the privacy documentation of your chosen AI provider.</p>
-          <p>We may disclose data only if required by law, court order, or to protect the rights and safety of our users — and solely to the minimum extent necessary.</p>
-        </div>
-      </div>
-
-      <!-- SECTION 7 -->
-      <div class="mb-12">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">7</span>
-          <h2 class="text-xl font-extrabold text-slate-900">HIPAA Considerations</h2>
-        </div>
-        <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
-          <p>Note Reviewer is designed to assist BCBAs in improving the quality of their documentation. We encourage users to exercise professional judgment and follow their organization's HIPAA compliance policies when using any technology tool that interacts with clinical records.</p>
-          <p>Because we do not store, log, or transmit PHI to our servers beyond the immediate processing window, our architecture is designed to minimize HIPAA risk. However, <strong class="text-slate-800">it is the responsibility of the clinician and their employing organization to ensure that any tool used in their workflow meets their specific compliance requirements.</strong></p>
-          <p>
-            If your organization requires a Business Associate Agreement (BAA), please contact us at
-            <a href="mailto:info@notereviewer.org" class="text-brand-700 underline underline-offset-2 hover:text-brand-800">info@notereviewer.org</a> to discuss your needs.
-          </p>
-        </div>
-      </div>
-
-      <!-- SECTION 8 -->
-      <div class="mb-12">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">8</span>
-          <h2 class="text-xl font-extrabold text-slate-900">Your Rights</h2>
-        </div>
-        <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
-          <p>Since we do not maintain persistent records of your note content, there is typically no stored personal data to access, correct, or delete. If you have concerns about any data we may hold, you have the right to:</p>
-          <ul class="space-y-2 mt-2">
-            {[
-              'Request confirmation of whether we hold any personal data about you.',
-              'Request deletion of any data we may have inadvertently retained.',
-              'Withdraw consent for processing at any time by uninstalling the extension.',
-              'Lodge a complaint with the relevant data protection authority in your jurisdiction.',
-            ].map((item) => (
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
-                </svg>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-          <p class="mt-3">
-            To exercise any of these rights, contact us at
-            <a href="mailto:info@notereviewer.org" class="text-brand-700 underline underline-offset-2 hover:text-brand-800">info@notereviewer.org</a>.
-          </p>
-        </div>
-      </div>
-
-      <!-- SECTION 9 -->
-      <div class="mb-12">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">9</span>
-          <h2 class="text-xl font-extrabold text-slate-900">Changes to This Policy</h2>
-        </div>
-        <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
-          <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make changes, we will update the "Last updated" date at the top of this page.</p>
-          <p>We encourage you to review this page periodically. Continued use of the Note Reviewer extension after changes are posted constitutes your acceptance of the updated policy.</p>
-        </div>
-      </div>
-
-      <!-- SECTION 10 -->
-      <div class="mb-12">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">10</span>
-          <h2 class="text-xl font-extrabold text-slate-900">Contact Us</h2>
-        </div>
-        <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
-          <p>If you have any questions, concerns, or requests related to this Privacy Policy, please reach out to us:</p>
-          <div class="mt-4 bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-3">
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-brand-700 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-              </svg>
-              <span class="font-semibold text-slate-800">Infinity Code LLC</span>
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <strong class="text-slate-900">Plain-language summary:</strong> Note Reviewer reads the clinical
+                    note text you provide, sends it to a
+                    secure AI API for analysis, returns quality suggestions to you, and then discards the content. We do
+                    not store, sell, or share your data or your patients' Protected Health Information (PHI).
+                </p>
             </div>
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-brand-700 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-              </svg>
-              <a href="mailto:info@notereviewer.org" class="text-brand-700 hover:text-brand-800 transition-colors">info@notereviewer.org</a>
+
+
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">1</span>
+                    <h2 class="text-xl font-extrabold text-slate-900">Who We Are</h2>
+                </div>
+                <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
+                    <p>
+                        Note Reviewer is a browser extension developed and maintained by <strong class="text-slate-800">Infinity
+                        Code LLC</strong>,
+                        a technology company dedicated to building productivity tools for healthcare professionals.
+                        Our secure API infrastructure is hosted at <a href="https://infinitycodellc.com" target="_blank"
+                                                                      rel="noopener"
+                                                                      class="text-brand-700 underline underline-offset-2 hover:text-brand-800">infinitycodellc.com</a>.
+                    </p>
+                    <p>
+                        If you have any questions about this Privacy Policy, please contact us at
+                        <a href="mailto:info@notereviewer.org"
+                           class="text-brand-700 underline underline-offset-2 hover:text-brand-800">info@notereviewer.org</a>.
+                    </p>
+                </div>
             </div>
-            <div class="flex items-center gap-3">
-              <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              <a href="https://wa.me/13053079212" target="_blank" rel="noopener" class="text-slate-700 hover:text-emerald-600 transition-colors">+1 305-307-9212 (WhatsApp)</a>
+
+            <!-- SECTION 2 -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">2</span>
+                    <h2 class="text-xl font-extrabold text-slate-900">What Data We Process</h2>
+                </div>
+                <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
+                    <p>
+                        When you use Note Reviewer, the extension reads the <strong class="text-slate-800">clinical note
+                        text</strong> visible on your active
+                        browser tab — only when you explicitly trigger the analysis by activating the side panel. This
+                        text
+                        may include session descriptions, behavioral observations, and goal progress notes authored by
+                        BCBAs.
+                    </p>
+                    <p>We do <strong class="text-slate-800">not</strong> collect or process:</p>
+                    <ul class="list-none space-y-2 mt-2">
+                        {[
+                            'Patient names, dates of birth, or any other direct identifiers.',
+                            'Social Security Numbers, insurance IDs, or financial information.',
+                            'Photographs, audio recordings, or biometric data.',
+                            'Your browsing history outside of the active note analysis session.',
+                        ].map((item) => (
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-rose-400 shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                         stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                                    </svg>
+                                    <span>{item}</span>
+                                </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
-          </div>
+
+            <!-- SECTION 3 -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">3</span>
+                    <h2 class="text-xl font-extrabold text-slate-900">How We Use Your Data</h2>
+                </div>
+                <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
+                    <p>The note text you submit is used <strong class="text-slate-800">solely</strong> to generate
+                        real-time quality and compliance suggestions. The processing pipeline is as follows:</p>
+                    <ol class="list-none space-y-3 mt-2">
+                        {[
+                            'You activate the Note Reviewer side panel and submit a note for review.',
+                            'The extension encrypts the text and sends it over HTTPS/TLS to our secure API endpoint at infinitycodellc.com.',
+                            'The AI model analyzes the note for clinical quality, objectivity, measurability, and ABA compliance standards.',
+                            'Suggestions are returned to your browser and displayed in the side panel.',
+                            'The submitted text is immediately discarded from our servers — it is never written to a database or log file.',
+                        ].map((step, i) => (
+                                <li class="flex items-start gap-3">
+                                    <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-brand-700 text-white text-xs font-bold shrink-0 mt-0.5">{i + 1}</span>
+                                    <span>{step}</span>
+                                </li>
+                        ))}
+                    </ol>
+                </div>
+            </div>
+
+            <!-- SECTION 4 -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">4</span>
+                    <h2 class="text-xl font-extrabold text-slate-900">Data Storage &amp; Retention</h2>
+                </div>
+                <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
+                    <p><strong class="text-slate-800">We do not store clinical note content on our servers.</strong>
+                        After the AI analysis is complete and the response is sent back to your browser, all submitted
+                        text is discarded from memory and is not persisted in any database, file system, or log.</p>
+                    <p>Your <strong class="text-slate-800">API key</strong> — required to authenticate with the AI
+                        provider — is stored exclusively in your browser's local storage using the browser Extension
+                        Storage API. It never leaves your device and is never transmitted to our servers.</p>
+                    <p>We may retain <strong class="text-slate-800">anonymized, aggregate usage metrics</strong> (e.g.,
+                        number of analyses performed per day) for the sole purpose of monitoring service reliability.
+                        These metrics contain no content from your notes.</p>
+                </div>
+            </div>
+
+            <!-- SECTION 5 -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">5</span>
+                    <h2 class="text-xl font-extrabold text-slate-900">Security Measures</h2>
+                </div>
+                <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
+                    <p>We implement industry-standard security controls to protect the data you submit:</p>
+                    <ul class="space-y-2 mt-2">
+                        {[
+                            {
+                                icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z',
+                                label: 'Encryption in transit:',
+                                desc: 'All communication between the extension and our API uses TLS 1.2+ (HTTPS), preventing eavesdropping or interception.'
+                            },
+                            {
+                                icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z',
+                                label: 'Secure infrastructure:',
+                                desc: 'Our API is hosted on enterprise-grade cloud infrastructure with restricted access, firewall protection, and regular security audits.'
+                            },
+                            {
+                                icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+                                label: 'Minimal data exposure:',
+                                desc: 'By design, we process the smallest amount of data necessary to fulfill the analysis request and discard it immediately after.'
+                            },
+                        ].map(({icon, label, desc}) => (
+                                <li class="flex items-start gap-3 bg-slate-50 rounded-xl px-4 py-3">
+                                    <svg class="w-5 h-5 text-brand-700 shrink-0 mt-0.5" fill="none"
+                                         stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d={icon}/>
+                                    </svg>
+                                    <span><strong class="text-slate-800">{label}</strong> {desc}</span>
+                                </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 6 -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">6</span>
+                    <h2 class="text-xl font-extrabold text-slate-900">Third-Party Sharing</h2>
+                </div>
+                <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
+                    <p><strong class="text-slate-800">We do not sell, rent, or share your data with third parties for
+                        advertising, marketing, or any commercial purpose.</strong></p>
+                    <p>The note text you submit is processed by the AI model provider that you configure via your API
+                        key. That provider's own privacy policy and terms of service govern their handling of data. We
+                        strongly recommend reviewing the privacy documentation of your chosen AI provider.</p>
+                    <p>We may disclose data only if required by law, court order, or to protect the rights and safety of
+                        our users — and solely to the minimum extent necessary.</p>
+                </div>
+            </div>
+
+            <!-- SECTION 7 -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">7</span>
+                    <h2 class="text-xl font-extrabold text-slate-900">HIPAA Considerations</h2>
+                </div>
+                <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
+                    <p>Note Reviewer is designed to assist BCBAs in improving the quality of their documentation. We
+                        encourage users to exercise professional judgment and follow their organization's HIPAA
+                        compliance policies when using any technology tool that interacts with clinical records.</p>
+                    <p>Because we do not store, log, or transmit PHI to our servers beyond the immediate processing
+                        window, our architecture is designed to minimize HIPAA risk. However, <strong
+                                class="text-slate-800">it is the responsibility of the clinician and their employing
+                            organization to ensure that any tool used in their workflow meets their specific compliance
+                            requirements.</strong></p>
+                    <p>
+                        If your organization requires a Business Associate Agreement (BAA), please contact us at
+                        <a href="mailto:info@notereviewer.org"
+                           class="text-brand-700 underline underline-offset-2 hover:text-brand-800">info@notereviewer.org</a>
+                        to discuss your needs.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SECTION 8 -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">8</span>
+                    <h2 class="text-xl font-extrabold text-slate-900">Your Rights</h2>
+                </div>
+                <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
+                    <p>Since we do not maintain persistent records of your note content, there is typically no stored
+                        personal data to access, correct, or delete. If you have concerns about any data we may hold,
+                        you have the right to:</p>
+                    <ul class="space-y-2 mt-2">
+                        {[
+                            'Request confirmation of whether we hold any personal data about you.',
+                            'Request deletion of any data we may have inadvertently retained.',
+                            'Withdraw consent for processing at any time by uninstalling the extension.',
+                            'Lodge a complaint with the relevant data protection authority in your jurisdiction.',
+                        ].map((item) => (
+                                <li class="flex items-start gap-2">
+                                    <svg class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" fill="none"
+                                         stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    <span>{item}</span>
+                                </li>
+                        ))}
+                    </ul>
+                    <p class="mt-3">
+                        To exercise any of these rights, contact us at
+                        <a href="mailto:info@notereviewer.org"
+                           class="text-brand-700 underline underline-offset-2 hover:text-brand-800">info@notereviewer.org</a>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SECTION 9 -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">9</span>
+                    <h2 class="text-xl font-extrabold text-slate-900">Changes to This Policy</h2>
+                </div>
+                <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
+                    <p>We may update this Privacy Policy from time to time to reflect changes in our practices,
+                        technology, legal requirements, or other factors. When we make changes, we will update the "Last
+                        updated" date at the top of this page.</p>
+                    <p>We encourage you to review this page periodically. Continued use of the Note Reviewer extension
+                        after changes are posted constitutes your acceptance of the updated policy.</p>
+                </div>
+            </div>
+
+            <!-- SECTION 10 -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-brand-700/10 text-brand-700 font-bold text-sm shrink-0">10</span>
+                    <h2 class="text-xl font-extrabold text-slate-900">Contact Us</h2>
+                </div>
+                <div class="pl-11 space-y-3 text-slate-600 text-sm leading-relaxed">
+                    <p>If you have any questions, concerns, or requests related to this Privacy Policy, please reach out
+                        to us:</p>
+                    <div class="mt-4 bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-3">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-700 shrink-0" fill="none" stroke="currentColor"
+                                 stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                            <span class="font-semibold text-slate-800">Infinity Code LLC</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-brand-700 shrink-0" fill="none" stroke="currentColor"
+                                 stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <a href="mailto:info@notereviewer.org"
+                               class="text-brand-700 hover:text-brand-800 transition-colors">info@notereviewer.org</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-emerald-500 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            <a href="https://wa.me/13053079212" target="_blank" rel="noopener"
+                               class="text-slate-700 hover:text-emerald-600 transition-colors">+1 305-307-9212
+                                (WhatsApp)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to home -->
+            <div class="mt-16 text-center">
+                <a href="/"
+                   class="inline-flex items-center gap-2 text-brand-700 font-semibold text-sm hover:text-brand-800 transition-colors">
+                    <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" stroke-width="2"
+                         viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                    Back to Note Reviewer Home
+                </a>
+            </div>
         </div>
-      </div>
+    </main>
 
-      <!-- Back to home -->
-      <div class="mt-16 text-center">
-        <a href="/" class="inline-flex items-center gap-2 text-brand-700 font-semibold text-sm hover:text-brand-800 transition-colors">
-          <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-          </svg>
-          Back to Note Reviewer Home
-        </a>
-      </div>
-    </div>
-  </main>
-
-  <Footer />
+    <Footer/>
 </Layout>
 
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #003060 0%, #004e89 40%, #1a6ab5 75%, #2d8fd4 100%);
+    }
+
+    .orb {
+        filter: blur(80px);
+        opacity: 0.35;
+    }
+
+    .orb-1 {
+        width: 480px;
+        height: 480px;
+        background: radial-gradient(circle, #38bdf8 0%, transparent 70%);
+        top: -120px;
+        right: 5%;
+        position: absolute;
+    }
+
+    .orb-2 {
+        width: 320px;
+        height: 320px;
+        background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+        bottom: -80px;
+        left: 5%;
+        position: absolute;
+    }
+
+</style>

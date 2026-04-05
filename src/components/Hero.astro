@@ -1,46 +1,226 @@
 ---
+import { Image } from 'astro:assets';
 import BrowserStores from './BrowserStores.astro';
+import popupImg from '../assets/popup.svg';
+import sidebarImg from '../assets/sidebar.svg';
 ---
 
-<section class="relative overflow-hidden bg-linear-to-br from-brand-700 via-brand-600 to-brand-500 text-white">
+<section class="hero-section relative overflow-hidden text-white">
   <div
-    class="absolute inset-0 opacity-10"
-    style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 28px 28px;"
+    class="absolute inset-0 opacity-[0.07]"
+    style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 30px 30px;"
   ></div>
 
-  <div class="relative max-w-6xl mx-auto px-6 py-28 md:py-36 text-center">
-    <span class="inline-flex items-center gap-2 bg-white/15 border border-white/25 text-white/90 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
-      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-      Browser Extension · AI-Powered
-    </span>
+  <div class="orb orb-1 absolute rounded-full pointer-events-none"></div>
+  <div class="orb orb-2 absolute rounded-full pointer-events-none"></div>
 
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6 max-w-4xl mx-auto">
-      Note Reviewer:<br />
-      <span class="text-sky-300">AI-Powered Quality &amp; Compliance</span><br />
-      for ABA Notes
-    </h1>
+  <div class="relative max-w-7xl mx-auto px-6 py-24 md:py-32 lg:py-36">
+    <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-12">
 
-    <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed">
-      Real-time clinical note review right inside your browser's side panel. Designed for BCBAs who need
-      instant quality feedback — without ever modifying the original text.
-    </p>
+      <div class="flex-1 text-center lg:text-left max-w-xl mx-auto lg:mx-0">
 
-    <div id="install" class="bg-white/10 border border-white/20 rounded-2xl px-8 py-7 max-w-xl mx-auto mb-8 backdrop-blur-sm">
-      <BrowserStores label="Install on your browser" size="md" />
+        <span class="inline-flex items-center gap-2 bg-white/15 border border-white/25 text-white/90 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-8">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Browser Extension · AI-Powered
+        </span>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+          Note Reviewer:<br />
+          <span class="gradient-text">AI-Powered Quality<br />&amp; Compliance</span><br />
+          <span class="text-white/90">for ABA Notes</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-white/75 mb-10 leading-relaxed">
+          Real-time clinical note review right inside your browser's side panel.
+          Designed for BCBAs who need instant quality feedback — without ever
+          modifying the original text.
+        </p>
+
+        <div id="install" class="bg-white/10 border border-white/20 rounded-2xl px-7 py-6 mb-6 backdrop-blur-sm">
+          <BrowserStores label="Install on your browser" size="md" />
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center lg:items-start gap-4">
+          <a
+            href="#how-it-works"
+            class="inline-flex items-center gap-2 text-white/65 hover:text-white text-sm font-medium transition-colors"
+          >
+            See how it works
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </a>
+        </div>
+
+        <p class="mt-8 text-white/45 text-sm">Trusted by ABA professionals · No PHI stored · Works on any EHR</p>
+      </div>
+
+      <div class="flex-1 relative w-full max-w-120 mx-auto lg:mx-0 hidden lg:block">
+        <div class="screenshots-wrapper relative">
+
+          <div class="img-glow absolute inset-0 rounded-3xl pointer-events-none"></div>
+
+          <div class="popup-card">
+            <Image
+              src={popupImg}
+              alt="Note Quality Review popup"
+              class="card-img"
+              loading="eager"
+            />
+          </div>
+
+          <div class="sidebar-card">
+            <Image
+              src={sidebarImg}
+              alt="Note Reviewer sidebar"
+              class="card-img"
+              loading="eager"
+            />
+          </div>
+
+        </div>
+      </div>
+
     </div>
-
-    <div class="flex justify-center gap-6">
-      <a
-        href="#how-it-works"
-        class="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-medium transition-colors"
-      >
-        See how it works
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-        </svg>
-      </a>
-    </div>
-
-    <p class="mt-8 text-white/50 text-sm">Trusted by ABA professionals · No PHI stored · Works on any EHR</p>
   </div>
 </section>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, #003060 0%, #004e89 40%, #1a6ab5 75%, #2d8fd4 100%);
+  }
+
+  .orb {
+    filter: blur(80px);
+    opacity: 0.35;
+  }
+  .orb-1 {
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, #38bdf8 0%, transparent 70%);
+    top: -120px;
+    right: 5%;
+    position: absolute;
+  }
+  .orb-2 {
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+    bottom: -80px;
+    left: 5%;
+    position: absolute;
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #7dd3fc 0%, #38bdf8 50%, #93c5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .screenshots-wrapper {
+    height: 480px;
+    position: relative;
+  }
+
+  .img-glow {
+    background: radial-gradient(ellipse at 50% 55%, rgba(56, 189, 248, 0.30) 0%, rgba(99, 102, 241, 0.15) 55%, transparent 80%);
+    filter: blur(28px);
+    transform: scale(1.1);
+  }
+
+  .popup-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60%;
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow:
+      0 28px 70px rgba(0, 0, 0, 0.50),
+      0 8px 22px rgba(0, 0, 0, 0.35),
+      0 0 0 1px rgba(255, 255, 255, 0.14);
+    transform: perspective(900px) rotateY(4deg) rotateX(2deg) translateZ(30px);
+    animation: float-popup 5s ease-in-out infinite;
+    transition: transform 0.4s ease;
+  }
+  .popup-card:hover {
+    transform: perspective(900px) rotateY(2deg) rotateX(1deg) translateY(-6px) scale(1.02) translateZ(40px);
+  }
+
+  .sidebar-card {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 57%;
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 5;
+    box-shadow:
+      0 20px 55px rgba(0, 0, 0, 0.40),
+      0 5px 16px rgba(0, 0, 0, 0.28),
+      0 0 0 1px rgba(255, 255, 255, 0.10);
+    transform: perspective(900px) rotateY(-5deg) rotateX(-2deg) translateZ(0);
+    animation: float-sidebar 5s ease-in-out infinite;
+    animation-delay: -2.5s;
+    transition: transform 0.4s ease;
+  }
+  .sidebar-card:hover {
+    transform: perspective(900px) rotateY(-3deg) rotateX(-1deg) translateY(-6px) scale(1.02) translateZ(10px);
+  }
+
+  .card-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  @keyframes float-popup {
+    0%, 100% { transform: perspective(900px) rotateY(4deg) rotateX(2deg) translateY(0px) translateZ(30px); }
+    50%       { transform: perspective(900px) rotateY(4deg) rotateX(2deg) translateY(-14px) translateZ(30px); }
+  }
+
+  @keyframes float-sidebar {
+    0%, 100% { transform: perspective(900px) rotateY(-5deg) rotateX(-2deg) translateY(0px) translateZ(0); }
+    50%       { transform: perspective(900px) rotateY(-5deg) rotateX(-2deg) translateY(-10px) translateZ(0); }
+  }
+
+  @media (max-width: 768px) {
+    .screenshots-wrapper {
+      height: 300px;
+    }
+    .popup-card {
+      width: 54%;
+    }
+    .sidebar-card {
+      width: 51%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .screenshots-wrapper {
+      height: 220px;
+    }
+    .popup-card {
+      width: 52%;
+    }
+    .sidebar-card {
+      width: 49%;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .screenshots-wrapper {
+      height: 180px;
+    }
+    .popup-card {
+      width: 50%;
+    }
+    .sidebar-card {
+      width: 47%;
+    }
+  }
+</style>
+
