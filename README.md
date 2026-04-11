@@ -1,6 +1,7 @@
 # Note Reviewer — Landing Page
 
-Official marketing website for the **Note Reviewer** Chrome Extension — an AI-powered quality and compliance tool for BCBAs working in Applied Behavior Analysis (ABA).
+Official marketing website for the **Note Reviewer** Chrome Extension — an AI-powered quality and compliance tool for
+BCBAs working in Applied Behavior Analysis (ABA).
 
 Built with [Astro](https://astro.build) + [Tailwind CSS](https://tailwindcss.com).  
 A product by **Infinity Code LLC** · [info@notereviewer.org](mailto:info@notereviewer.org)
@@ -88,7 +89,8 @@ This site is a fully static Astro project and can be deployed to any static host
 
 ### GitHub Pages
 
-Add an `astro.config.mjs` `base` and `site` option if deploying to a subpath, then push to the `gh-pages` branch or use the official [Astro GitHub Pages GitHub Action](https://docs.astro.build/en/guides/deploy/github/).
+Add an `astro.config.mjs` `base` and `site` option if deploying to a subpath, then push to the `gh-pages` branch or use
+the official [Astro GitHub Pages GitHub Action](https://docs.astro.build/en/guides/deploy/github/).
 
 ---
 
@@ -117,11 +119,11 @@ To update the "Last updated" date, edit the `lastUpdated` variable at the top of
 
 ## 📬 Contact & Support
 
-| Channel   | Details                                              |
-|-----------|------------------------------------------------------|
-| Email     | [info@notereviewer.org](mailto:info@notereviewer.org) |
-| WhatsApp  | [+1 305-307-9212](https://wa.me/13053079212)         |
-| Company   | Infinity Code LLC                                    |
+| Channel  | Details                                               |
+|----------|-------------------------------------------------------|
+| Email    | [info@notereviewer.org](mailto:info@notereviewer.org) |
+| WhatsApp | [+1 786-644-7422](https://wa.me/17866447422)          |
+| Company  | Infinity Code LLC                                     |
 
 ---
 
